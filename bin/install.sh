@@ -2,11 +2,6 @@
 
 cd "$HOME" || exit
 
-mkdir temp_____
-
-cd temp_____ || exit
-rm -rf francinette
-
 # download github
 git clone --recursive https://github.com/MustafaBaypara/francinette42-Ubuntu.git
 
@@ -30,12 +25,9 @@ if [ "$(uname)" != "Darwin" ]; then
 	esac
 fi
 
-cp -r francinette "$HOME"
-
 cd "$HOME" || exit
-rm -rf temp_____
 
-cd "$HOME"/francinette || exit
+cd "$HOME"/francinette42-Ubuntu || exit
 
 # install requirements
 if ! pip3 install -r requirements.txt ; then
@@ -57,16 +49,16 @@ echo "try to add alias in file: $RC_FILE"
 # set up the alias
 if ! grep "francinette=" "$RC_FILE" &> /dev/null; then
 	echo "francinette alias not present"
-	printf "\nalias francinette=%s/francinette/tester.sh\n" "$HOME" >> "$RC_FILE"
+	printf "\nalias francinette=%s/francinette42-Ubuntu/tester.sh\n" "$HOME" >> "$RC_FILE"
 fi
 
 if ! grep "paco=" "$RC_FILE" &> /dev/null; then
 	echo "Short alias not present. Adding it"
-	printf "\nalias paco=%s/francinette/tester.sh\n" "$HOME" >> "$RC_FILE"
+	printf "\nalias paco=%s/francinette42-Ubuntu/tester.sh\n" "$HOME" >> "$RC_FILE"
 fi
 
 # print help
-"$HOME"/francinette/tester.sh --help
+"$HOME"/francinette42-Ubuntu/tester.sh --help
 
 # automatically replace current shell with new one.
 exec "$SHELL"
