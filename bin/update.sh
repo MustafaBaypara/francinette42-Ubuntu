@@ -5,14 +5,11 @@ if [ "$(uname)" != "Darwin" ]; then
 	sudo apt install libbsd-dev libncurses-dev
 fi
 
-cd "$HOME"/francinette || exit
+cd "$HOME"/francinette42-Ubuntu || exit
 
 git fetch origin
 git reset --hard origin
 git submodule update --init
-
-# activate venv
-. venv/bin/activate
 
 echo "Updating python dependencies..."
 # install requirements
