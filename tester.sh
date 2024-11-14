@@ -8,4 +8,4 @@ version=68
 
 cd "$current_dir" || exit
 
-python "$DIR"/main.py "$@"
+python3 "$DIR"/main.py "$@"
