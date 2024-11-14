@@ -7,6 +7,5 @@ current_dir=$PWD
 version=68
 
 cd "$current_dir" || exit
-source "$DIR"/venv/bin/activate
 
 python "$DIR"/main.py "$@"
